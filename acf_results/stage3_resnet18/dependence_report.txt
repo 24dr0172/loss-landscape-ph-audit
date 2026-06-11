@@ -1,0 +1,31 @@
+
+======================================================================
+TEMPORAL DEPENDENCE REPORT -- ResNet-18 / CIFAR-10
+  Diagnostic only. Does not establish recurrence.
+======================================================================
+  Optimizer           lag= 1(mag/cos)  lag= 5(mag/cos)  lag=10(mag/cos)  lag=20(mag/cos)
+  SGD                 +0.964/+0.063  +0.900/+0.129  +0.853/+0.115  +0.751/+0.094
+  SGD + momentum      +0.985/-0.016  +0.942/+0.011  +0.901/+0.014  +0.816/+0.011
+  Adam                +0.990/-0.021  +0.973/+0.000  +0.947/+0.005  +0.864/+0.005
+  AdamW               +0.990/-0.021  +0.972/-0.001  +0.948/+0.003  +0.864/+0.004
+
+  WINDOW AVERAGES (mean cos_sim across seeds):
+  Optimizer           C[1:10]   C[11:20]  C[1:20]
+  SGD                 +0.1181   +0.1023   +0.1102
+  SGD + momentum      +0.0070   +0.0112   +0.0091
+  Adam                -0.0028   +0.0048   +0.0010
+  AdamW               -0.0036   +0.0042   +0.0003
+
+  PAIRWISE C[1:20] DIFFERENCES (descriptive):
+  SGD                vs SGD + momentum      diff=+0.1011
+  SGD                vs Adam                diff=+0.1092
+  SGD                vs AdamW               diff=+0.1099
+  SGD + momentum     vs Adam                diff=+0.0081
+  SGD + momentum     vs AdamW               diff=+0.0088
+  Adam               vs AdamW               diff=+0.0007
+
+  NEXT-STAGE SUGGESTION: At least one optimizer shows |C[1:20]| > 0.1.
+  Non-trivial directional persistence detected.
+  Running the next stage may provide useful comparison.
+  This is a workflow heuristic, not a statistical criterion.
+======================================================================

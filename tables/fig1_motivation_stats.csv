@@ -1,0 +1,3 @@
+metric,Lobs,null_med,null_max,TSR,pperm,pct,zrob,delta,zero_frac,null_collapsed,zrob_collapsed,fallback,separation_flag,formal_trigger,nominal_trigger,final_k,sentinel_used
+ambient_euclidean_3d,0.46825218200683594,0.06489593535661697,0.2435283064842224,7.215431589458956,0.0033222591362126247,100.0,16.953383911945686,0.22472387552261353,0.0,False,False,False,False,True,True,,
+graph_geodesic_3d,0.0062683578580617905,0.059086790308356285,0.22909186780452728,0.10608729675859897,1.0,0.0,-2.0468948610090765,-0.2228235099464655,0.0,False,False,False,False,False,False,12.0,False

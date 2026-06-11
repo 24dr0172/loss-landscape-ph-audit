@@ -1,0 +1,10 @@
+architecture,optimizer,seed,threshold_pct,GEODESIC_K,GEODESIC_MAX_K,N_NULL,SUBSAMPLE,CHUNK_COLS,ALPHA,decision,is_default_threshold,Lobs,null_med,null_max,TSR,pperm,pct,zrob,delta,zero_frac,null_collapsed,zrob_collapsed,fallback,separation_flag,formal_trigger,nominal_trigger
+resnet18_cifar10,sgd,20042,90.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,20042,95.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,True,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,20042,99.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,21042,90.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,21042,95.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,True,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,21042,99.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,22042,90.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,22042,95.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,True,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False
+resnet18_cifar10,sgd,22042,99.0,12,199,50,200,20000,0.05,sensitivity_non_trigger,False,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,True,True,False,False,False,False

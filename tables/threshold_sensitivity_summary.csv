@@ -1,0 +1,4 @@
+threshold_pct,n_rows,n_positive,positive_rate,mean_pperm,mean_zrob,mean_Lobs
+90.0,3,0,0.0,1.0,0.0,0.0
+95.0,3,0,0.0,1.0,0.0,0.0
+99.0,3,0,0.0,1.0,0.0,0.0
