@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+tqdm
+joblib
+networkx
+pillow
+torch
+torchvision
+ripser
+persim
+gudhi
+giotto-tda

@@ -1,0 +1,17 @@
+# Python caches and local runtime output
+__pycache__/
+*.py[cod]
+*.log
+logs/
+
+# Large generated data and model artifacts
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.tar.gz
+
+# Keep trajectory-folder documentation, but exclude trajectory data
+**/trajectories/*
+!**/trajectories/README.md

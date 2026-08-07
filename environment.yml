@@ -1,0 +1,26 @@
+name: topological-audit
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - tqdm
+  - joblib
+  - networkx
+  - pillow
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - pip:
+      - ripser
+      - persim
+      - gudhi
+      - giotto-tda

@@ -1,0 +1,31 @@
+
+======================================================================
+TEMPORAL DEPENDENCE REPORT -- MLP2 / MNIST
+  Diagnostic only. Does not establish recurrence.
+======================================================================
+  Optimizer           lag= 1(mag/cos)  lag= 5(mag/cos)  lag=10(mag/cos)  lag=20(mag/cos)
+  SGD                 +0.709/+0.897  +0.415/+0.911  +0.328/+0.898  +0.253/+0.874
+  SGD + momentum      +0.879/+0.493  +0.634/+0.610  +0.491/+0.595  +0.341/+0.581
+  Adam                +0.809/+0.203  +0.531/+0.392  +0.403/+0.381  +0.203/+0.369
+  AdamW               +0.793/+0.204  +0.282/+0.380  +0.207/+0.359  +0.137/+0.322
+
+  WINDOW AVERAGES (mean cos_sim across seeds):
+  Optimizer           C[1:10]   C[11:20]  C[1:20]
+  SGD                 +0.9066   +0.8835   +0.8951
+  SGD + momentum      +0.5990   +0.5903   +0.5946
+  Adam                +0.3706   +0.3739   +0.3723
+  AdamW               +0.3589   +0.3389   +0.3489
+
+  PAIRWISE C[1:20] DIFFERENCES (descriptive):
+  SGD                vs SGD + momentum      diff=+0.3005
+  SGD                vs Adam                diff=+0.5228
+  SGD                vs AdamW               diff=+0.5462
+  SGD + momentum     vs Adam                diff=+0.2223
+  SGD + momentum     vs AdamW               diff=+0.2457
+  Adam               vs AdamW               diff=+0.0234
+
+  NEXT-STAGE SUGGESTION: At least one optimizer shows |C[1:20]| > 0.1.
+  Non-trivial directional persistence detected.
+  Running the next stage may provide useful comparison.
+  This is a workflow heuristic, not a statistical criterion.
+======================================================================
