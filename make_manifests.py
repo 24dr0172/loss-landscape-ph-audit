@@ -84,6 +84,10 @@ def main() -> None:
     manifest_for_top_level()
     manifest_for("scripts", "scripts_sha256.csv")
     manifest_for("tests", "tests_sha256.csv")
+    # The repair ledger generator is provenance-only, but its source must be
+    # hashable so a reviewer can identify the exact utility used to create the
+    # historical-versus-corrected comparison.
+    manifest_for("provenance", "provenance_sha256.csv")
     manifest_for("results", "results_sha256.csv")
     # The large raw trajectory archive is intentionally excluded from the
     # public release manifest; derived exp4 outputs remain covered.
@@ -92,10 +96,22 @@ def main() -> None:
         "exp4_results_sha256.csv",
         exclude_top_level=("trajectories",),
     )
-    manifest_for("exp5_results", "exp5_results_sha256.csv")
+    manifest_for(
+        "exp5_results",
+        "exp5_results_sha256.csv",
+        exclude_top_level=("trajectories",),
+    )
     manifest_for("acf_results", "acf_results_sha256.csv")
     manifest_for("figures", "figures_sha256.csv")
     manifest_for("tables", "tables_sha256.csv")
+    # Preserve historical derived outputs as comparison material.  The old
+    # manifest CSVs are documentary records from a different release and are
+    # intentionally excluded from the new manifest.
+    manifest_for(
+        "legacy_release_outputs",
+        "legacy_release_outputs_sha256.csv",
+        exclude_top_level=("manifests",),
+    )
     print(f"Wrote manifests to {MANIFEST_DIR}")
 
 

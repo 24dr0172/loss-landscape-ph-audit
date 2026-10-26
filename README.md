@@ -25,9 +25,11 @@ Appendix J, **Numerical Implementation and Validation**, presents the final
 distance calculation and its checks. The release's Phase 1 path-fidelity
 certificate corresponds to the paper's Stage G realized-graph compatibility
 check; it is not a recurrence detector or a power guarantee. Source-level
-numerical corrections are documented in `RERUN_CHANGELOG.md`. The comparison
-ledger and provenance utilities described in the assembled release are not
-yet included in this GitHub snapshot.
+numerical corrections are documented in `RERUN_CHANGELOG.md`. The published
+36-row comparison ledger is
+`exp4_results/appendix/path_fidelity/path_fidelity_repair_comparison_main.csv`;
+its generator and documentation are under `provenance/`. These records retain
+the historical comparison separately from the production analysis.
 
 ## Implementation and validation
 
@@ -62,6 +64,10 @@ supplied for the 36 Experiment 4 trajectories in the certificate output; the
 Experiment 5 arrays are identified by name and size in their placeholder
 README.
 
+Both trajectory trees are excluded from active checksum manifests. The three
+small synthetic arrays under `results/forced_recurrence_positive_control/`
+are included and checksummed; they are separate from the omitted neural archives.
+
 Restore the matching arrays from the same release generation before any
 heavy rerun. The runner checks both archive counts and every
 trajectory/metrics pair before deleting generated outputs.
@@ -87,6 +93,8 @@ python lint_syntax.py
 python tests/test_distance_reconstruction.py
 python tests/test_code21_control_provenance.py
 python tests/test_code15_provenance.py
+python tests/test_repair_reconciliation.py
+python tests/test_release_artifacts.py
 python verify_release_consistency.py
 ```
 
@@ -104,10 +112,26 @@ python code_21_path_fidelity_certificate.py \
   --out-dir exp4_results/appendix/path_fidelity
 ```
 
-After an intentional output regeneration, regenerate manifests with
-`python make_manifests.py` and run `python verify_release_consistency.py`
-again. The separate historical-comparison ledger is not currently published
-in this repository.
+The published repair ledger can be checked without the raw arrays. To
+independently regenerate its historical and corrected certificate quantities,
+restore the matching Experiment 4 arrays first, then run
+`python provenance/generate_repair_ledger.py`. The utility performs no
+training, PH calculation, or permutation test.
+
+After an intentional output regeneration, rebuild summaries and checksums:
+
+```bash
+python make_manuscript_tables.py
+python make_manifests.py
+python verify_release_consistency.py
+```
+
+The verifier checks published file hashes, manifest coverage, exclusion of both
+neural trajectory trees, and source-row coverage in all three summary tables.
+The reproduction runner uses `--source-only` for its initial check so it can
+start after `CLEAN=1` removes generated artifacts. A clean heavy rerun also
+removes the repair ledger; regenerate it separately with the provenance utility
+before applying the full release-verification gate.
 
 ## Full rerun
 

@@ -12,6 +12,11 @@ logs/
 *.ckpt
 *.tar.gz
 
+# Small published synthetic-control arrays covered by the results manifest
+!/results/forced_recurrence_positive_control/forced_recurrence_null_k_used.npy
+!/results/forced_recurrence_positive_control/forced_recurrence_null_lifetimes.npy
+!/results/forced_recurrence_positive_control/forced_recurrence_trajectory.npy
+
 # Keep trajectory-folder documentation, but exclude trajectory data
 **/trajectories/*
 !**/trajectories/README.md

@@ -95,7 +95,7 @@ fi
 mkdir -p results figures tables manifests logs
 
 python -u lint_syntax.py
-python -u verify_release_consistency.py
+python -u verify_release_consistency.py --source-only
 
 run_logged() {
   local log_name="$1"
